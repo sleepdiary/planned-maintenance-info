@@ -4,9 +4,9 @@
 const outputs = {
     /* will set this key...     ... to this value */
     "branch-regexp"           : "^maint-",
-    "maintenance-window-start": "2020-01-01T00:00:00Z",
-    "maintenance-window-end"  : "2020-01-01T00:00:00Z",
-    //"maintenance-url"         : "",
+    "maintenance-window-start": "2021-08-15T09:00:00Z",
+    "maintenance-window-end"  : "2021-08-15T11:00:00Z",
+    "maintenance-url"         : "https://github.com/sleepdiary/internal-tools/issues/25",
 };
 
 // set the outputs - do not edit below this line
