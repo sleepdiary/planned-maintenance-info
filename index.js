@@ -9,6 +9,25 @@ const data = {
     "maintenance-window-start": "2021-08-22T09:00:00Z",
     "maintenance-window-end"  : "2021-08-22T10:00:00Z",
     "maintenance-url"         : "https://github.com/sleepdiary/internal-tools/issues/32",
+    "maintenance-actions"     : [
+        {
+            "title": "Publish images",
+            "type": "run_workflows",
+            "workflows": [
+                { "owner": "sleepdiary", "repo": "internal-tools", "id": "autobuild.yml" },
+            ],
+        },
+        {
+            "title": "Check workflows",
+            "type": "run_workflows",
+            "workflows": [
+                { "owner": "sleepdiary", "repo": "core", "id": "main.yml" },
+                { "owner": "sleepdiary", "repo": "dashboard", "id": "main.yml" },
+                { "owner": "sleepdiary", "repo": "info", "id": "main.yml" },
+                { "owner": "sleepdiary", "repo": "report", "id": "main.yml" },
+            ],
+        },
+    ],
 };
 
 // Do not edit below this line
