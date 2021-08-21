@@ -1,7 +1,9 @@
+(function() {
+
 /*
  * Change the values below to whatever you want
  */
-const outputs = {
+const data = {
     /* will set this key...     ... to this value */
     "branch-regexp"           : "^maint-",
     "maintenance-window-start": "2021-08-22T09:00:00Z",
@@ -9,6 +11,15 @@ const outputs = {
     "maintenance-url"         : "https://github.com/sleepdiary/internal-tools/issues/32",
 };
 
-// set the outputs - do not edit below this line
-Object.keys(outputs).forEach( key => console.log( `::set-output name=${key}::${outputs[key]}` ) );
-Object.keys(outputs).forEach( key => console.log( `${key}: ${outputs[key]}` ) );
+// Do not edit below this line
+
+(
+    globalThis.handle_data
+    ? globalThis.handle_data
+    : data => {
+        Object.keys(data).forEach( key => console.log( `::set-output name=${key}::${data[key]}` ) );
+        Object.keys(data).forEach( key => console.log( `${key}: ${data[key]}` ) );
+    }
+)(data);
+
+})();
