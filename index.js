@@ -10,6 +10,15 @@ const data = {
     "maintenance-window-end"  : "2021-08-22T10:00:00Z",
     "maintenance-url"         : "https://github.com/sleepdiary/internal-tools/issues/32",
     "maintenance-actions"     : [
+        /*
+        {
+            "title": "Update build",
+            "type": "accept_prs",
+            "prs": [
+                { "owner": "sleepdiary", "repo": "internal-tools", "id": 33, },
+            ],
+        },
+        */
         {
             "title": "Publish images",
             "type": "run_workflows",
