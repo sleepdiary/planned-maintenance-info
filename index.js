@@ -10,15 +10,13 @@ const data = {
     "maintenance-window-end"  : "2021-08-22T10:00:00Z",
     "maintenance-url"         : "https://github.com/sleepdiary/internal-tools/issues/32",
     "maintenance-actions"     : [
-        /*
         {
-            "title": "Update build",
+            "title": "Update latest",
             "type": "accept_prs",
             "prs": [
-                { "owner": "sleepdiary", "repo": "internal-tools", "id": 33, },
+                { "owner": "sleepdiary", "repo": "internal-tools", "id": 39, },
             ],
         },
-        */
         {
             "title": "Publish images",
             "type": "run_workflows",
@@ -27,11 +25,16 @@ const data = {
             ],
         },
         {
+            "title": "Update dashboard",
+            "type": "accept_prs",
+            "prs": [
+                { "owner": "sleepdiary", "repo": "dashboard", "id": 26, },
+            ],
+        },        {
             "title": "Check workflows",
             "type": "run_workflows",
             "workflows": [
                 { "owner": "sleepdiary", "repo": "core", "id": "main.yml" },
-                { "owner": "sleepdiary", "repo": "dashboard", "id": "main.yml" },
                 { "owner": "sleepdiary", "repo": "info", "id": "main.yml" },
                 { "owner": "sleepdiary", "repo": "report", "id": "main.yml" },
             ],
