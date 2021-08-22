@@ -7,7 +7,7 @@ const data = {
     /* will set this key...     ... to this value */
     "branch-regexp"           : "^maint-",
     "maintenance-window-start": "2021-08-22T09:00:00Z",
-    "maintenance-window-end"  : "2021-08-22T10:00:00Z",
+    "maintenance-window-end"  : "2021-08-22T09:15:00Z",
     "maintenance-url"         : "https://github.com/sleepdiary/internal-tools/issues/32",
     "maintenance-actions"     : [
         {
