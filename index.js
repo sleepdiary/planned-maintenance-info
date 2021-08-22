@@ -11,6 +11,44 @@ const data = {
     "maintenance-url"         : "https://github.com/sleepdiary/internal-tools/issues/32",
     "maintenance-actions"     : [
         {
+            "title": "Announce maintenance times",
+            "type": "run_workflows",
+            "workflows": [
+                { "owner": "sleepdiary", "repo": "internal-tools", "id": "maintenance-timer.yml" },
+            ],
+        },
+        {
+            "title": "Pre-flight checks",
+            type: "check_sites",
+            "sites": [
+                {
+                    title: "Front page",
+                    url: "https://sleepdiary.github.io",
+                    comment: "Check links work",
+                },
+                {
+                    title: "Dashboard",
+                    url: "https://sleepdiary.github.io/dashboard",
+                    comment: "Check you can load a diary",
+                },
+                {
+                    title: "Notifications",
+                    url: "https://github.com/notifications",
+                    comment: "Shouldn't have any news"
+                },
+                {
+                    title: "Forum",
+                    url: "https://github.com/sleepdiary/sleepdiary.github.io/discussions",
+                    comment: "Shouldn't be any problems",
+                },
+                {
+                    title: "GitHub Status",
+                    url: "https://www.githubstatus.com/",
+                    comment: "Should be 'All Systems Operational'",
+                },
+            ],
+        },
+        {
             "title": "Update latest",
             "type": "accept_prs",
             "prs": [
@@ -30,13 +68,40 @@ const data = {
             "prs": [
                 { "owner": "sleepdiary", "repo": "dashboard", "id": 26, },
             ],
-        },        {
+        },
+        {
             "title": "Check workflows",
             "type": "run_workflows",
             "workflows": [
                 { "owner": "sleepdiary", "repo": "core", "id": "main.yml" },
                 { "owner": "sleepdiary", "repo": "info", "id": "main.yml" },
                 { "owner": "sleepdiary", "repo": "report", "id": "main.yml" },
+            ],
+        },
+        {
+            "title": "Check for problems",
+            type: "check_sites",
+            "sites": [
+                {
+                    title: "Front page",
+                    url: "https://sleepdiary.github.io",
+                    comment: "Check links work",
+                },
+                {
+                    title: "Dashboard",
+                    url: "https://sleepdiary.github.io/dashboard",
+                    comment: "Check you can load a diary",
+                },
+                {
+                    title: "Notifications",
+                    url: "https://github.com/notifications",
+                    comment: "Shouldn't have any news"
+                },
+                {
+                    title: "Forum",
+                    url: "https://github.com/sleepdiary/sleepdiary.github.io/discussions",
+                    comment: "Shouldn't be any problems",
+                },
             ],
         },
     ],
