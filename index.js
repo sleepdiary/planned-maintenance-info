@@ -80,7 +80,7 @@ The maintenance window is [now open](https://sleepdiary.github.io/internal-tools
             "title": "Build and publish the new build system",
             "type": "accept_prs",
             "prs": [
-                { "owner": "sleepdiary", "repo": "internal-tools", "id": 39, },
+                { "owner": "sleepdiary", "repo": "internal-tools", "id": 49, },
             ],
         },
         {
