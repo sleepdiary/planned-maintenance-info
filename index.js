@@ -77,26 +77,23 @@ The maintenance window is [now open](https://sleepdiary.github.io/internal-tools
             ],
         },
         {
-            "title": "Update latest",
+            "title": "Build and publish the new build system",
             "type": "accept_prs",
             "prs": [
                 { "owner": "sleepdiary", "repo": "internal-tools", "id": 39, },
             ],
         },
         {
-            "title": "Publish images",
-            "type": "run_workflows",
-            "workflows": [
-                { "owner": "sleepdiary", "repo": "internal-tools", "id": "autobuild.yml" },
-            ],
-        },
-        {
-            "title": "Update dashboard",
+            "title": "Update repo's",
             "type": "accept_prs",
             "prs": [
-                { "owner": "sleepdiary", "repo": "dashboard", "id": 26, },
+                { "owner": "sleepdiary", "repo": "core", "id": 19, },
+                { "owner": "sleepdiary", "repo": "dashboard", "id": 28, },
+                { "owner": "sleepdiary", "repo": "info", "id": 13, },
+                { "owner": "sleepdiary", "repo": "report", "id": 11, },
             ],
         },
+        /* Done implicitly by the PRs in the previous step
         {
             "title": "Check workflows",
             "type": "run_workflows",
@@ -106,6 +103,7 @@ The maintenance window is [now open](https://sleepdiary.github.io/internal-tools
                 { "owner": "sleepdiary", "repo": "report", "id": "main.yml" },
             ],
         },
+        */
         {
             "title": "Check for problems",
             type: "check_sites",
