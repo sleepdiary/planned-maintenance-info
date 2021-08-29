@@ -162,8 +162,13 @@ The maintenance window is [now open](https://sleepdiary.github.io/internal-tools
             "title": "Delete 'last-known-good' branches",
             "type": "delete_branches",
             "branches": [
-                { "owner": "andrew-sayers", "name": "last-known-good", "repo": "internal-tools" },
-                { "owner": "andrew-sayers", "name": "last-known-good", "repo": "info" },
+                { "owner": "sleepdiary", "name": "last-known-good", "repo": "core" },
+                { "owner": "sleepdiary", "name": "last-known-good", "repo": "dashboard" },
+                { "owner": "sleepdiary", "name": "last-known-good", "repo": "docs" },
+                { "owner": "sleepdiary", "name": "last-known-good", "repo": "info" },
+                { "owner": "sleepdiary", "name": "last-known-good", "repo": "internal-tools" },
+                { "owner": "sleepdiary", "name": "last-known-good", "repo": "report" },
+                { "owner": "sleepdiary", "name": "last-known-good", "repo": "sleepdiary.github.io" },
             ],
         },
         {
