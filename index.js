@@ -6,8 +6,8 @@
 const data = {
     /* will set this key...     ... to this value */
     "branch-regexp"           : "^maint-",
-    "maintenance-window-start": "2021-08-30T09:00:00Z",
-    "maintenance-window-end"  : "2021-08-30T09:15:00Z",
+    "maintenance-window-start": "2021-08-29T09:00:00Z",
+    "maintenance-window-end"  : "2021-08-29T10:00:00Z",
     "maintenance-url"         : "https://github.com/sleepdiary/internal-tools/issues/48",
     "maintenance-actions"     : [
         {
@@ -23,7 +23,7 @@ const data = {
             "comments": [
                 {
                     "title": "Announce the start",
-                    "owner": "andrew-sayers",
+                    "owner": "sleepdiary",
                     "repo": "internal-tools",
                     "body": `# Maintenance procedure starting
 
@@ -136,7 +136,7 @@ The maintenance window is [now open](https://sleepdiary.github.io/internal-tools
             "comments": [
                 {
                     "title": "Announce the end",
-                    "owner": "andrew-sayers",
+                    "owner": "sleepdiary",
                     "repo": "internal-tools",
                     "body": "# Maintenance finished: {{conclusion}}\n\n{{comments}}",
                     "fields": [
