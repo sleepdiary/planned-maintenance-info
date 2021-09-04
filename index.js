@@ -5,13 +5,12 @@
  */
 const build_system_pull_request = 0; // PR that will merge recent changes in the build system
 const pull_requests = { // pull requests we need to accept during the maintenance window
-/*
-    core: 19,
-    dashboard: 28,
-    info: 13,
-    report: 11,
-*/
+    core: 21,
+    dashboard: 31,
+    info: 15,
+    report: 13,
 };
+const delete_branches: Object.fromEntries( Object.keys(pull_requests).map( key => [key,'upgrade-dependencies'] ) )
 
 const start_at = `2021-09-05T09:00:00Z`; // time that the window will open
 const issue_id = 50; // tracking issue for this maintenance
@@ -144,7 +143,17 @@ The maintenance window is [now open](https://sleepdiary.github.io/internal-tools
                 name: `last-known-good`,
                 owner,
                 repo
-            })).concat([
+            })).concat(
+                all_repos.map( repo => ({
+                action: `delete_branch`,
+                name: `last-known-good`,
+                owner,
+                repo
+            }))
+                
+                delete_branches: Object.fromEntries( Object.keys(pull_requests).map( key => [key,'upgrade-dependencies'] ) )
+                
+                [
                 {
                     action: `disable_workflow`,
                     owner,
