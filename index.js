@@ -18,7 +18,7 @@ const issue_id = 50; // tracking issue for this maintenance
 /*
  * These might change over time, but are usually the same between runs
  */
-const owner = `andrew-sayers`; // change to your personal repo during debugging
+const owner = `sleepdiary`; // change to your personal repo during debugging
 
 const test_actions = JSON.stringify([ // pages that will need to be checked by hand
     {
