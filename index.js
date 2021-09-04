@@ -3,7 +3,7 @@
 /*
  * Most planned maintenances should only need to edit these variables
  */
-const build_system_pull_request = 52; // PR that will merge recent changes in the build system
+const build_system_pull_request = 53; // PR that will merge recent changes in the build system
 const pull_requests = { // pull requests we need to accept during the maintenance window
     core: 21,
     dashboard: 31,
@@ -110,10 +110,10 @@ The maintenance window is [now open](https://sleepdiary.github.io/internal-tools
             actions: JSON.parse(test_actions),
         },
         {
-            title: `Build and publish the new build system`,
+            title: `Publish the new build system`,
             actions: build_system_pull_request ? [
-                { action: `wait_for_workflow`, owner, repo: `internal-tools`, id: `autobuild.yml`, },
                 { action: `accept_pr`, owner, repo: `internal-tools`, id: build_system_pull_request, },
+                { action: `wait_for_workflow`, owner, repo: `internal-tools`, id: `autobuild.yml`, },
             ] : [],
         },
         {
