@@ -10,7 +10,7 @@ const pull_requests = { // pull requests we need to accept during the maintenanc
     info: 15,
     report: 13,
 };
-const delete_branches: Object.fromEntries( Object.keys(pull_requests).map( key => [key,'upgrade-dependencies'] ) )
+const delete_branches = Object.fromEntries( Object.keys(pull_requests).map( key => [key,'upgrade-dependencies'] ) );
 
 const start_at = `2021-09-05T09:00:00Z`; // time that the window will open
 const issue_id = 50; // tracking issue for this maintenance
@@ -144,46 +144,47 @@ The maintenance window is [now open](https://sleepdiary.github.io/internal-tools
                 owner,
                 repo
             })).concat(
-                all_repos.map( repo => ({
-                action: `delete_branch`,
-                name: `last-known-good`,
-                owner,
-                repo
-            }))
-                
-                delete_branches: Object.fromEntries( Object.keys(pull_requests).map( key => [key,'upgrade-dependencies'] ) )
+
+                Object.entries(delete_branches).map( ([repo,name]) => ({
+                    action: `delete_branch`,
+                    name,
+                    owner,
+                    repo
+                })),
                 
                 [
-                {
-                    action: `disable_workflow`,
-                    owner,
-                    repo: `internal-tools`,
-                    id: `maintenance-timer.yml`,
-                },
-                {
-                    action: `add_comment`,
-                    id: issue_id,
-                    owner,
-                    repo: `internal-tools`,
-                    body: `# Maintenance finished: {{conclusion}}\n\n{{comments}}`,
-                    fields: [
-                        {
-                            label: `Conclusion`,
-                            id: `conclusion`,
-                            type: `switch`,
-                            on: `success`,
-                            off: `reverted`,
-                            value: false,
-                        },
-                        {
-                            label: `Comments`,
-                            id: `comments`,
-                            type: `textarea`,
-                            value: ``,
-                        },
-                    ],
-                },
-            ]),
+                    {
+                        action: `disable_workflow`,
+                        owner,
+                        repo: `internal-tools`,
+                        id: `maintenance-timer.yml`,
+                    },
+                    {
+                        action: `add_comment`,
+                        id: issue_id,
+                        owner,
+                        repo: `internal-tools`,
+                        body: `# Maintenance finished: {{conclusion}}\n\n{{comments}}`,
+                        fields: [
+                            {
+                                label: `Conclusion`,
+                                id: `conclusion`,
+                                type: `switch`,
+                                on: `success`,
+                                off: `reverted`,
+                                value: false,
+                            },
+                            {
+                                label: `Comments`,
+                                id: `comments`,
+                                type: `textarea`,
+                                value: ``,
+                            },
+                        ],
+                    },
+                ],
+
+            ),
         },
     ],
 };
