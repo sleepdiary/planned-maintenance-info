@@ -3,6 +3,7 @@
 /*
  * Most planned maintenances should only need to edit these variables
  */
+const enabled = true;
 const build_system_pull_request = 53; // PR that will merge recent changes in the build system
 const pull_requests = { // pull requests we need to accept during the maintenance window
     core: 21,
@@ -77,6 +78,7 @@ const data = {
     "maintenance-window-start"   : start_at,
     "maintenance-window-duration": 1 * 60*60*1000, // one hour
     "maintenance-url"            : `https://github.com/sleepdiary/internal-tools/issues/${issue_id}`,
+    "maintenance-window-enabled" : enabled,
     "maintenance-steps"          : [
         {
             title: `Open the maintenance window`,
