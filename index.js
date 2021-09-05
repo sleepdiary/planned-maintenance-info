@@ -88,7 +88,7 @@ const data = {
                     repo: `internal-tools`,
                     body: `# Maintenance procedure starting
 
-The maintenance window is [now open](https://sleepdiary.github.io/internal-tools/maintenance-actions.html).  Only maintenance-related pull requests are allowed.`,
+The maintenance window is [now open](https://andrew-sayers.github.io/planned-maintenance/#https://sleepdiary.github.io/planned-maintenance-info/index.js).  Only maintenance-related pull requests are allowed.`,
                     fields: [],
                 },
                 {
