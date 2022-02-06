@@ -57,12 +57,8 @@ const test_actions = JSON.stringify([ // pages that will need to be checked by h
     },
 ]);
 
-const repo_updates_required = false;
-    
 // every repo in the organisation:
-const all_repos =
-      repo_updates_required
-      ? [
+const all_repos = [
     `core`,
     `dashboard`,
     `docs`,
@@ -70,7 +66,7 @@ const all_repos =
     `internal-tools`,
     `report`,
     `sleepdiary.github.io`
-] : [];
+];
 
 // repos with workflows that are liable to break when we update the build system:
 const workflows_that_use_the_build_system = [
