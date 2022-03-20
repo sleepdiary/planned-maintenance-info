@@ -4,7 +4,7 @@
  * Most planned maintenances should only need to edit these variables
  */
 const enabled = true;
-const build_system_pull_request = 71; // PR that will merge recent changes in the build system
+const build_system_pull_request = 70; // PR that will merge recent changes in the build system
 const pull_requests = { // pull requests we need to accept during the maintenance window
     core: 36,
     dashboard: 50,
