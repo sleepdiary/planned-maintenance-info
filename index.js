@@ -3,21 +3,21 @@
 /*
  * Most planned maintenances should only need to edit these variables
  */
-const enabled = false;
-const build_system_pull_request = 63; // PR that will merge recent changes in the build system
+const enabled = true;
+const build_system_pull_request = 70; // PR that will merge recent changes in the build system
 const pull_requests = { // pull requests we need to accept during the maintenance window
-    /*
-    core: 21,
-    dashboard: 31,
-    info: 15,
-    report: 13,
-    */
+    core: 36,
+    dashboard: 50,
+    docs: 35,
+    info: 33,
+    report: 21,
 };
-const delete_branches = Object.fromEntries( Object.keys(pull_requests).map( key => [key,'upgrade-dependencies'] ) );
-if ( build_system_pull_request ) delete_branches['internal-tools'] = 'upgrade-dependencies';
+const branch_name = 'update-2022-03-20';
+const delete_branches = Object.fromEntries( Object.keys(pull_requests).map( key => [key,branch_name] ) );
+if ( build_system_pull_request ) delete_branches['internal-tools'] = branch_name;
 
-const start_at = `2022-02-07T12:00:00Z`; // time that the window will open
-const issue_id = 64; // tracking issue for this maintenance
+const start_at = `2022-03-20T18:00:00Z`; // time that the window will open
+const issue_id = 71; // tracking issue for this maintenance
 
 /*
  * These might change over time, but are usually the same between runs
