@@ -4,20 +4,21 @@
  * Most planned maintenances should only need to edit these variables
  */
 const enabled = true;
-const build_system_pull_request = 70; // PR that will merge recent changes in the build system
+const build_system_pull_request = 76; // PR that will merge recent changes in the build system
 const pull_requests = { // pull requests we need to accept during the maintenance window
-    core: 36,
-    dashboard: 50,
-    docs: 35,
-    info: 33,
-    report: 21,
+    core: 38,
+    dashboard: 52,
+    docs: 46,
+    info: 35,
+    report: 24,
+    resources: 3,
 };
-const branch_name = 'update-2022-03-20';
+const branch_name = 'update-2022-04-05';
 const delete_branches = Object.fromEntries( Object.keys(pull_requests).map( key => [key,branch_name] ) );
 if ( build_system_pull_request ) delete_branches['internal-tools'] = branch_name;
 
-const start_at = `2022-03-20T18:00:00Z`; // time that the window will open
-const issue_id = 71; // tracking issue for this maintenance
+const start_at = `2022-04-06T11:00:00Z`; // time that the window will open
+const issue_id = 77; // tracking issue for this maintenance
 
 /*
  * These might change over time, but are usually the same between runs
@@ -57,24 +58,21 @@ const test_actions = JSON.stringify([ // pages that will need to be checked by h
     },
 ]);
 
-// every repo in the organisation:
-const all_repos = [
-    `core`,
-    `dashboard`,
-    `docs`,
-    `info`,
-    `internal-tools`,
-    `report`,
-    `sleepdiary.github.io`
-];
-
 // repos with workflows that are liable to break when we update the build system:
 const workflows_that_use_the_build_system = [
     `core`,
     `dashboard`,
+    `docs`,
     `info`,
     `report`,
+    `resources`,
 ];
+
+// every repo in the organisation:
+const all_repos = workflows_that_use_the_build_system.concat([
+    `internal-tools`,
+    `sleepdiary.github.io`
+]);
 
 const data = {
     "maintenance-window-start"   : start_at,
