@@ -17,7 +17,7 @@ const branch_name = 'update-2022-04-05';
 const delete_branches = Object.fromEntries( Object.keys(pull_requests).map( key => [key,branch_name] ) );
 if ( build_system_pull_request ) delete_branches['internal-tools'] = branch_name;
 
-const start_at = `2022-04-06T11:00:00Z`; // time that the window will open
+const start_at = `2022-04-06T09:00:00Z`; // time that the window will open
 const issue_id = 77; // tracking issue for this maintenance
 
 /*
