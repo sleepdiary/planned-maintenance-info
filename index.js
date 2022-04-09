@@ -4,21 +4,23 @@
  * Most planned maintenances should only need to edit these variables
  */
 const enabled = false;
-const build_system_pull_request = 76; // PR that will merge recent changes in the build system
+const build_system_pull_request = 80; // PR that will merge recent changes in the build system
 const pull_requests = { // pull requests we need to accept during the maintenance window
+    /*
     core: 38,
     dashboard: 52,
     docs: 46,
     info: 35,
     report: 24,
     resources: 3,
+    */
 };
-const branch_name = 'update-2022-04-05';
+const branch_name = 'update-2022-04-10';
 const delete_branches = Object.fromEntries( Object.keys(pull_requests).map( key => [key,branch_name] ) );
 if ( build_system_pull_request ) delete_branches['internal-tools'] = branch_name;
 
-const start_at = `2022-04-06T09:00:00Z`; // time that the window will open
-const issue_id = 77; // tracking issue for this maintenance
+const start_at = `2022-04-10T09:00:00Z`; // time that the window will open
+const issue_id = 81; // tracking issue for this maintenance
 
 /*
  * These might change over time, but are usually the same between runs
